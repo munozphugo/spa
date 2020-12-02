@@ -1,0 +1,16 @@
+<div class="row animated fadeIn">
+  <div class="col-12 mb-3">
+    <h4>Búsqueda: <small class="text-muted">{{ parametros }}</small></h4>
+  </div>
+  <div class="col-12" *ngIf="heroes.length == 0">
+    <div class="alert alert-danger" role="alert">
+      No se han encontrado resultados!
+    </div>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-success"><i class="fas fa-chevron-left"></i> Regresar a Heroes</a>
+  </div>
+  <div class="col-12 pl-5 pr-5 pt-3">
+    <div class="card-columns">
+      <app-heroe-tarjeta [heroe]="foo" [indice]="foo.idx" *ngFor="let foo of heroes"></app-heroe-tarjeta>
+    </div>
+  </div>
+</div>
